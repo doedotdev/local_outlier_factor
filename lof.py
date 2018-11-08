@@ -1,6 +1,6 @@
 from itertools import combinations
 from math import sqrt
-
+from json import dumps
 
 class LOF:
 
@@ -22,10 +22,34 @@ class LOF:
 
         # calculate each ones kth nearest
 
-        print(self.coordinates)
+        print(dumps(self.coordinates, indent=4, sort_keys=True))
 
         for key, value in self.coordinates.items():
             print(key)
+            sorted_list = []
+            for sub_key, sub_value in self.coordinates[key]['distances'].items():
+                print(sub_key)
+                print(sub_value)
+
+        # TODO: we actually dont need to store an item if it is over the kth item distance away
+        # we can discard it and not have to sort though it.
+        # TODO: we can actiually instantiate an array of length k and just populate that as items come in
+        # and sort it in place
+
+
+            "a": {
+                "distances": {
+                    "b": 3,
+                    "c": 7,
+                    "d": 11
+                },
+                "distances": [
+                    "b": 3,
+                    "c": 7,
+                    "d": 11] ,
+                "x": 0,
+                "y": 0
+            }
 
 
             # self.coordinates[[combo[0]]['dists'][combo[1]]] = dist
@@ -34,9 +58,6 @@ class LOF:
         #unique_pairs = self.get_unique_pairs()
 
         #for pair in unique_pairs:
-
-    def write_kth(self, coordinate):
-
 
     def write_distance(self, key_1, key_2, distance):
         if 'distances' in self.coordinates[key_1]:
