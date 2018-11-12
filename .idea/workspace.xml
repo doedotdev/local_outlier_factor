@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7a1ed28-57ae-44e5-b9c0-3386e9d07e8a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/okay" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lof.py" beforeDir="false" afterPath="$PROJECT_DIR$/lof.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +21,8 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -27,6 +30,7 @@
           <entry key="bash_profile" value="1" />
           <entry key="md" value="1" />
           <entry key="ok" value="1" />
+          <entry key="okay" value="1" />
           <entry key="py" value="4" />
         </counts>
       </usages-collector>
@@ -34,7 +38,7 @@
         <counts>
           <entry key="Bash" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="Python" value="4" />
         </counts>
       </usages-collector>
@@ -43,15 +47,16 @@
           <entry key="bash_profile" value="232" />
           <entry key="md" value="18" />
           <entry key="ok" value="61" />
-          <entry key="py" value="4003" />
+          <entry key="okay" value="13" />
+          <entry key="py" value="6149" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="232" />
           <entry key="Markdown" value="18" />
-          <entry key="PLAIN_TEXT" value="61" />
-          <entry key="Python" value="4003" />
+          <entry key="PLAIN_TEXT" value="74" />
+          <entry key="Python" value="6149" />
         </counts>
       </usages-collector>
     </session>
@@ -73,13 +78,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lof.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+            <state relative-caret-position="280">
+              <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
-                <marker date="1541734613194" expanded="true" signature="196:197" ph="..." />
-                <marker date="1541734613194" expanded="true" signature="2026:2032" ph="..." />
-                <marker date="1541734613194" expanded="true" signature="2081:3271" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="163:164" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="1416:1421" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="1416:1624" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="2315:2321" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="2363:2372" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="2363:2721" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="2758:2779" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="2774:2779" ph="..." />
+                <marker date="1541999842420" expanded="true" signature="2828:4146" ph="..." />
               </folding>
             </state>
           </provider>
@@ -89,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/ll.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <marker date="1541654562585" expanded="true" signature="33:140" ph="..." />
                 <marker date="1541654562585" expanded="true" signature="158:163" ph="..." />
@@ -126,6 +137,7 @@
         <option value="$PROJECT_DIR$/ok" />
         <option value="$USER_HOME$/.bash_profile" />
         <option value="$PROJECT_DIR$/ll.py" />
+        <option value="$PROJECT_DIR$/okay" />
         <option value="$PROJECT_DIR$/lof.py" />
       </list>
     </option>
@@ -217,13 +229,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2074392" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4970545" visible="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4992636" weight="0.398827" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4970545" visible="true" weight="0.3746988" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4992636" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -241,9 +253,32 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lof.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lof.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ok" />
     <entry file="file://$PROJECT_DIR$/k.py" />
+    <entry file="file://$USER_HOME$/.bash_profile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -254,17 +289,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.bash_profile">
+    <entry file="file://$PROJECT_DIR$/okay">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ll.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <marker date="1541654562585" expanded="true" signature="33:140" ph="..." />
             <marker date="1541654562585" expanded="true" signature="158:163" ph="..." />
@@ -274,13 +309,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lof.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+        <state relative-caret-position="280">
+          <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-            <marker date="1541734613194" expanded="true" signature="196:197" ph="..." />
-            <marker date="1541734613194" expanded="true" signature="2026:2032" ph="..." />
-            <marker date="1541734613194" expanded="true" signature="2081:3271" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="163:164" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="1416:1421" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="1416:1624" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="2315:2321" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="2363:2372" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="2363:2721" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="2758:2779" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="2774:2779" ph="..." />
+            <marker date="1541999842420" expanded="true" signature="2828:4146" ph="..." />
           </folding>
         </state>
       </provider>

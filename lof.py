@@ -2,11 +2,9 @@ from itertools import combinations
 from math import sqrt
 from json import dumps
 from collections import OrderedDict
-from operator import itemgetter
 
 
 class LOF:
-
     CONST_MANHATTAN = 'Manhattan'
 
     def __init__(self, coordinates, distance_formula, k):
@@ -23,72 +21,85 @@ class LOF:
             self.write_distance(combo[0], combo[1], distance)
             self.write_distance(combo[1], combo[0], distance)
 
+        print()
+
+        for coord_key in self.coordinates:
+            self.write_k_nearest_set(coord_key)
+            self.write_k_nearest_neighbor(coord_key)
+
+        for coord_key in self.coordinates:
+            self.get_local_reachability_distance(coord_key)
+
+        for coord_key in self.coordinates:
 
 
-        # calculate each ones kth nearest
+        print(dumps(self.coordinates, indent=4))
 
-        print(dumps(self.coordinates, indent=4, sort_keys=True))
-
-        for key, value in self.coordinates.items():
-            print(key)
-            sorted_list = []
-            for sub_key, sub_value in self.coordinates[key]['distances'].items():
-                print('-' + str(sub_key))
-                print('-' + str(sub_value))
 
         # TODO: we actually dont need to store an item if it is over the kth item distance away
         # we can discard it and not have to sort though it.
         # TODO: we can actiually instantiate an array of length k and just populate that as items come in
         # and sort it in place
 
-            #
-            # "a": {
-            #     "distances": {
-            #         "b": 3,
-            #         "c": 7,
-            #         "d": 11
-            #     },
-            #     "distances": [
-            #         "b": 3,
-            #         "c": 7,
-            #         "d": 11] ,
-            #     "x": 0,
-            #     "y": 0
-            # }
+    def calculate_final_lof(self, coord):
+    #     [LRD(b) + LRD(c)] * [reachDist(b < - a) + reachDist(c < - a)]
+    #
+    # LOF(a) = ----------------------------------------------------------
+    # kNearestSetCount(a) * kNearestSetCount(a)
 
 
-            # self.coordinates[[combo[0]]['dists'][combo[1]]] = dist
-            # self.coordinates[[combo[1]]['dists'][combo[0]]] = dist
 
-        #unique_pairs = self.get_unique_pairs()
+    def get_reach_distance(self, coord_one, coord_two):
+        return max(self.coordinates[coord_one]['k_nearest_value'],
+                   self.get_manhattan_distance(self.coordinates[coord_one], self.coordinates[coord_two]))
 
-        #for pair in unique_pairs:
+    def get_local_reachability_distance(self, coord):
+        neighbors = self.coordinates[coord]['distances']
+        print(neighbors)
+        reach_distance_sum = 0
+        for neighbor in neighbors:
+            print(neighbor)
+            reach_distance_sum = reach_distance_sum + self.get_reach_distance(neighbor, coord)
+
+        self.coordinates[coord]['local_reachability_distance'] = \
+            len(self.coordinates[coord]['distances'])/reach_distance_sum
+
+    def write_k_nearest_neighbor(self, coord):
+        # write neighbor and value
+        k_nearest_neighbor = list(self.coordinates[coord]['distances'].keys())[self.k-1]
+        k_nearest_value = self.coordinates[coord]['distances'][k_nearest_neighbor]
+        self.coordinates[coord]['k_nearest_neighbor'] = k_nearest_neighbor
+        self.coordinates[coord]['k_nearest_value'] = k_nearest_value
+
+
+    def write_k_nearest_set(self, coord):
+        return
 
     def write_distance(self, key_1, key_2, distance):
         if 'distances' in self.coordinates[key_1]:
-            print('Total Items in Dict: ' + str(len(self.coordinates[key_1]['distances'])))
             if len(self.coordinates[key_1]['distances']) == self.k:
-                print('could already be full')
-                print(self.coordinates[key_1]['distances'][self.coordinates[key_1]['distances'].keys()[0]])
-                if distance > self.coordinates[key_1]['distances'][self.coordinates[key_1]['distances'].keys()[0]]:
+                # print('could already be full')
+                if distance > list(self.coordinates[key_1]['distances'].values())[0]:
+                    # print('no need to insert')
                     return
                 else:
+                    # print('insert and pop uneeded off')
                     return
-
-
-            self.coordinates[key_1]['distances'][key_2] = distance
-            print('before')
-            print(self.coordinates[key_1]['distances'])
-            print('after')
-            self.coordinates[key_1]['distances'] = \
-                dict(OrderedDict(sorted(self.coordinates[key_1]['distances'].items(),
-                                        key=itemgetter(1),
-                                        reverse=True)))
-            print(self.coordinates[key_1]['distances'])
+            else:
+                # normal insert
+                if key_2 in self.coordinates[key_1]['distances']:
+                    print('if key is already in, update it')
+                    self.coordinates[key_1]['distances'][key_2] = distance
+                    self.coordinates[key_1]['distances'] = \
+                        OrderedDict(sorted(self.coordinates[key_1]['distances'].items(), key=lambda x: x[1]))
+                else:
+                    # print('key doesnt exist, sort it in')
+                    self.coordinates[key_1]['distances'][key_2] = distance
+                    self.coordinates[key_1]['distances'] = \
+                        OrderedDict(sorted(self.coordinates[key_1]['distances'].items(), key=lambda x: x[1]))
         else:
             self.coordinates[key_1]['distances'] = {}
-            self.coordinates[key_1]['distances'][key_2] = distance
-
+            self.write_distance(key_1, key_2, distance)
 
     def get_unique_pairs(self):
         return combinations(self.coordinates, 2)
@@ -97,50 +108,74 @@ class LOF:
         return abs(point_a['x'] - point_b['x']) + abs(point_a['y'] - point_b['y'])
 
     def get_euclidean_distance(self, point_a, point_b):
-        return sqrt((point_a[x] - point_b[x])**2 + abs(point_a[y] - point_b[y])**2)
+        return sqrt((point_a[x] - point_b[x]) ** 2 + abs(point_a[y] - point_b[y]) ** 2)
 
 
 data = [(1, 5), (2, 6), (3, 7), (4, 8), (123, 321)]
 
-
-coords = {
-    "a": {
-        "x": 0,
-        "y": 0
-    },
-    "b": {
-        "x": 1,
-        "y": 2,
-    },
-    "c": {
-        "x": 3,
-        "y": 4,
-    },
-    "d": {
-        "x": 5,
-        "y": 6,
-    }
-}
-
-lof = LOF(coords, 'hello', 2)
-
-# dicty =  {
-#     "distances": {
-#         "b": 3,
-#         "c": 15,
-#         "d": 11
+# coords = {
+#     "a": {
+#         "x": 0,
+#         "y": 0
+#     },
+#     "b": {
+#         "x": 1,
+#         "y": 2,
+#     },
+#     "c": {
+#         "x": 3,
+#         "y": 4,
+#     },
+#     "d": {
+#         "x": 5,
+#         "y": 6,
 #     }
 # }
-# temp_dict = dicty['distances']
-# print(temp_dict)
+
+# coords = OrderedDict([
+#     ('a', {'x': 0, 'y': 0}),
+#     ('b', {'x': 1, 'y': 2}),
+#     ('c', {'x': 3, 'y': 4}),
+#     ('d', {'x': 5, 'y': 6})
+# ])
+
+coords = OrderedDict([
+    ('a', OrderedDict([
+        ('x', 0),
+        ('y', 0)
+    ])),
+    ('b', OrderedDict([
+        ('x', 0),
+        ('y', 1)
+    ])),
+    ('c', OrderedDict([
+        ('x', 1),
+        ('y', 1)
+    ])),
+    ('d', OrderedDict([
+        ('x', 3),
+        ('y', 0)
+    ]))
+])
+
+# temp = coords['a']
+# print(dumps(temp, indent=4))
+# temp = OrderedDict(sorted(temp.items(), key=lambda x: x[1]))
+
+# print(dumps(temp, indent=4))
 #
-# print(dict(OrderedDict(sorted(temp_dict.items(), key=itemgetter(1), reverse=False))))
+# print(sorted(coords.items(), key=lambda x: x[1].items()))
+#
+# temp = OrderedDict([
+#     ('a', 4),
+#     ('b', 2),
+#     ('c', 3)
+# ])
 
+# # sort ordered dict by values
+# print(sorted(temp.items(), key=lambda x: x[1]))
+#
+# # sort ordered dict by keys
+# print(sorted(temp.items(), key=lambda x: x[0]))
 
-
-# DIFFERENT WAYS TO REPRESENT DATA
-# datax = [1, 2, 3, 4]
-# datay = [5, 6, 7, 8]
-# data = zip(datax, datay)
-# print(list(data))
-# print(abs(-4))
+lof = LOF(coords, 'hello', 2)
