@@ -2,6 +2,7 @@ from itertools import combinations
 import math
 from json import dumps
 from collections import OrderedDict
+from itertools import islice
 
 
 def get_manhattan_distance(point_a, point_b):
@@ -58,41 +59,6 @@ class LOF:
         else:
             return self.CONST_MANHATTAN
 
-
-    def print_all_data(self, tab=4):
-        print('===All Data For Each Coordinate===')
-        print(dumps(self.coordinates, indent=tab))
-
-    def print_all_lof(self):
-        print('===All Local Outlier Factors for Each Coordinate===')
-        for coordinate in self.coordinates:
-            print(coordinate + ': ' + str(self.coordinates[coordinate][self.LOF_KEY]))
-
-    def print_lof_sorted_filtered(self, reverse_order=False, filter_value_greater_than=None,
-                                  filter_value_less_than=None):
-        print('===Local Outlier Factor Distances Sorted and Filtered===')
-
-        if (filter_value_less_than is not None and filter_value_greater_than is not None) and \
-                filter_value_greater_than > filter_value_less_than:
-            print(self.CONST_ERROR + 'Cannot filter for values greater than ' + filter_value_greater_than +
-                  ' and less than ' + filter_value_less_than)
-
-        if filter_value_less_than is None:
-            filter_value_less_than = math.inf
-
-        if filter_value_greater_than is None:
-            filter_value_greater_than = -math.inf
-
-        local_reachability_distances = []
-        for coordinate in self.coordinates:
-            coordinate_value = self.coordinates[coordinate][self.LOF_KEY]
-            if filter_value_greater_than < coordinate_value < filter_value_less_than:
-                local_reachability_distances.append((coordinate, coordinate_value))
-
-        local_reachability_distances.sort(key=lambda tup: tup[1], reverse=reverse_order)
-        for coordinate in local_reachability_distances:
-            print(coordinate[0] + ': ' + str(coordinate[1]))
-
     def calculate_final_lof(self):
         for coordinate in self.coordinates:
             neighbors = self.coordinates[coordinate][self.DIST_KEY]
@@ -133,7 +99,13 @@ class LOF:
                 if distance > list(self.coordinates[key_1][self.DIST_KEY].values())[0]:
                     return
                 else:
-                    # TODO
+                    print(self.coordinates[key_1][self.DIST_KEY])
+                    self.coordinates[key_1][self.DIST_KEY][key_2] = distance
+                    print(self.coordinates[key_1][self.DIST_KEY])
+                    temp_ordered_dict_sorted = OrderedDict(sorted(self.coordinates[key_1][self.DIST_KEY].items(), key=lambda x: x[1]))
+                    print(self.coordinates[key_1][self.DIST_KEY])
+                    self.coordinates[key_1][self.DIST_KEY] = OrderedDict(islice(temp_ordered_dict_sorted.items(), self.k))
+                    print(self.coordinates[key_1][self.DIST_KEY])
                     return
             else:
                 if key_2 in self.coordinates[key_1][self.DIST_KEY]:
@@ -156,6 +128,40 @@ class LOF:
             return get_manhattan_distance(point_a, point_b)
         elif self.distance_formula == self.CONST_EUCLIDEAN:
             return get_euclidean_distance(point_a, point_b)
+
+    def print_all_data(self, tab=4):
+        print('===All Data For Each Coordinate===')
+        print(dumps(self.coordinates, indent=tab))
+
+    def print_all_lof(self):
+        print('===All Local Outlier Factors for Each Coordinate===')
+        for coordinate in self.coordinates:
+            print(coordinate + ': ' + str(self.coordinates[coordinate][self.LOF_KEY]))
+
+    def print_lof_sorted_filtered(self, reverse_order=False, filter_value_greater_than=None,
+                                  filter_value_less_than=None):
+        print('===Local Outlier Factor Distances Sorted and Filtered===')
+
+        if (filter_value_less_than is not None and filter_value_greater_than is not None) and \
+                filter_value_greater_than > filter_value_less_than:
+            print(self.CONST_ERROR + 'Cannot filter for values greater than ' + filter_value_greater_than +
+                  ' and less than ' + filter_value_less_than)
+
+        if filter_value_less_than is None:
+            filter_value_less_than = math.inf
+
+        if filter_value_greater_than is None:
+            filter_value_greater_than = -math.inf
+
+        local_reachability_distances = []
+        for coordinate in self.coordinates:
+            coordinate_value = self.coordinates[coordinate][self.LOF_KEY]
+            if filter_value_greater_than < coordinate_value < filter_value_less_than:
+                local_reachability_distances.append((coordinate, coordinate_value))
+
+        local_reachability_distances.sort(key=lambda tup: tup[1], reverse=reverse_order)
+        for coordinate in local_reachability_distances:
+            print(coordinate[0] + ': ' + str(coordinate[1]))
 
 
 coords = OrderedDict([
@@ -180,5 +186,5 @@ coords = OrderedDict([
 lof = LOF(coords, LOF.CONST_MANHATTAN, 2)
 lof.print_all_data()
 # lof.print_all_data(10)
-# lof.print_all_lof()
+lof.print_all_lof()
 # lof.print_lof_sorted_filtered(True)

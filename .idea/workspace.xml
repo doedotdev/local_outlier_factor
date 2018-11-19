@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7a1ed28-57ae-44e5-b9c0-3386e9d07e8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_LOF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lof.py" beforeDir="false" afterPath="$PROJECT_DIR$/lof.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_LOF.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_LOF.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,8 @@
           <entry key="md" value="1" />
           <entry key="ok" value="1" />
           <entry key="okay" value="3" />
-          <entry key="py" value="5" />
+          <entry key="py" value="6" />
+          <entry key="pyi" value="2" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -41,7 +42,8 @@
           <entry key="Bash" value="1" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="5" />
+          <entry key="Python" value="6" />
+          <entry key="PythonStub" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -50,7 +52,7 @@
           <entry key="md" value="18" />
           <entry key="ok" value="61" />
           <entry key="okay" value="13" />
-          <entry key="py" value="10015" />
+          <entry key="py" value="10900" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -59,7 +61,7 @@
           <entry key="Bash" value="232" />
           <entry key="Markdown" value="18" />
           <entry key="PLAIN_TEXT" value="76" />
-          <entry key="Python" value="10015" />
+          <entry key="Python" value="10900" />
         </counts>
       </usages-collector>
     </session>
@@ -78,32 +80,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lof.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="166" column="17" lean-forward="true" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+            <state relative-caret-position="176">
+              <caret line="102" column="114" selection-start-line="102" selection-start-column="114" selection-end-line="102" selection-end-column="114" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
-                <marker date="1542087971826" expanded="true" signature="754:755" ph="..." />
-                <marker date="1542087971826" expanded="true" signature="1455:1461" ph="..." />
-                <marker date="1542087971826" expanded="true" signature="1910:1917" ph="..." />
-                <marker date="1542087971826" expanded="true" signature="2514:3580" ph="..." />
-                <marker date="1542087971826" expanded="true" signature="4226:4232" ph="..." />
-                <marker date="1542087971826" expanded="true" signature="4919:4925" ph="..." />
-                <marker date="1542087971826" expanded="true" signature="5144:5150" ph="..." />
-                <marker date="1542087971826" expanded="true" signature="5145:5150" ph="..." />
-                <marker date="1542087971826" expanded="true" signature="5199:6257" ph="..." />
+                <marker date="1542605162226" expanded="true" signature="783:784" ph="..." />
+                <marker date="1542605162226" expanded="true" signature="1484:1490" ph="..." />
+                <marker date="1542605162226" expanded="true" signature="1939:1945" ph="..." />
+                <marker date="1542605162226" expanded="true" signature="2591:2597" ph="..." />
+                <marker date="1542605162226" expanded="true" signature="3284:3290" ph="..." />
+                <marker date="1542605162226" expanded="true" signature="3509:3515" ph="..." />
+                <marker date="1542605162226" expanded="true" signature="3510:3515" ph="..." />
+                <marker date="1542605162226" expanded="true" signature="3564:4930" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_LOF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="39" column="96" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
+            <state relative-caret-position="655">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -138,6 +139,7 @@
       <find>print</find>
       <find />
       <find>sorted and filter</find>
+      <find>items</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -157,8 +159,8 @@
         <option value="$PROJECT_DIR$/ll.py" />
         <option value="$PROJECT_DIR$/okay" />
         <option value="$PROJECT_DIR$/hello.txt" />
-        <option value="$PROJECT_DIR$/lof.py" />
         <option value="$PROJECT_DIR$/test_LOF.py" />
+        <option value="$PROJECT_DIR$/lof.py" />
       </list>
     </option>
   </component>
@@ -204,7 +206,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_LOF.TestLOF">
+  <component name="RunManager" selected="Python.lof">
     <configuration name="lof" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="local_outlier_factor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,9 +214,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/env/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lof.py" />
@@ -240,20 +242,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_LOF.TestLOF.test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="local_outlier_factor" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_LOF.TestLOF.test&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for test_LOF.TestLOF.test_euclidean_distance" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="local_outlier_factor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,6 +253,20 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_LOF.TestLOF.test_euclidean_distance&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="local_outlier_factor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_LOF.TestLOF.test_get_unique_pairs&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -283,19 +285,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.lof" />
       <item itemvalue="Python tests.Unittests for test_LOF.TestLOF" />
       <item itemvalue="Python tests.Unittests for test_LOF.TestLOF.test_manhattan_distance" />
-      <item itemvalue="Python tests.Unittests for test_LOF.TestLOF.test" />
       <item itemvalue="Python tests.Unittests for test_LOF.TestLOF.test_euclidean_distance" />
+      <item itemvalue="Python tests.Unittests for test_LOF.TestLOF.test_get_unique_pairs" />
+      <item itemvalue="Python.lof" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.lof" />
+        <item itemvalue="Python tests.Unittests for test_LOF.TestLOF.test_get_unique_pairs" />
         <item itemvalue="Python tests.Unittests for test_LOF.TestLOF" />
         <item itemvalue="Python tests.Unittests for test_LOF.TestLOF.test_euclidean_distance" />
         <item itemvalue="Python tests.Unittests for test_LOF.TestLOF.test_manhattan_distance" />
-        <item itemvalue="Python tests.Unittests for test_LOF.TestLOF.test" />
-        <item itemvalue="Python.lof" />
       </list>
     </recent_temporary>
   </component>
@@ -313,32 +315,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_LOF_TestLOF - 2018.11.13 at 23h 28m 34s.xml">
+    <history-entry file="Unittests_for_test_LOF_TestLOF - 2018.11.13 at 23h 41m 10s.xml">
       <configuration name="Unittests for test_LOF.TestLOF" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_LOF_TestLOF - 2018.11.13 at 23h 31m 53s.xml">
+    <history-entry file="Unittests_for_test_LOF_TestLOF - 2018.11.18 at 23h 29m 45s.xml">
       <configuration name="Unittests for test_LOF.TestLOF" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_LOF_TestLOF - 2018.11.13 at 23h 32m 48s.xml">
-      <configuration name="Unittests for test_LOF.TestLOF" configurationId="tests" />
+    <history-entry file="Unittests_for_test_LOF_TestLOF_test_get_unique_pairs - 2018.11.18 at 23h 33m 21s.xml">
+      <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_LOF_TestLOF_test_manhattan_distance - 2018.11.13 at 23h 33m 24s.xml">
-      <configuration name="Unittests for test_LOF.TestLOF.test_manhattan_distance" configurationId="tests" />
+    <history-entry file="Unittests_for_test_LOF_TestLOF_test_get_unique_pairs - 2018.11.18 at 23h 33m 44s.xml">
+      <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_LOF_TestLOF_test - 2018.11.13 at 23h 33m 28s.xml">
-      <configuration name="Unittests for test_LOF.TestLOF.test" configurationId="tests" />
+    <history-entry file="Unittests_for_test_LOF_TestLOF_test_get_unique_pairs - 2018.11.18 at 23h 36m 21s.xml">
+      <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_LOF_TestLOF_test_manhattan_distance - 2018.11.13 at 23h 34m 15s.xml">
-      <configuration name="Unittests for test_LOF.TestLOF.test_manhattan_distance" configurationId="tests" />
+    <history-entry file="Unittests_for_test_LOF_TestLOF_test_get_unique_pairs - 2018.11.18 at 23h 36m 37s.xml">
+      <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_LOF_TestLOF_test_euclidean_distance - 2018.11.13 at 23h 34m 49s.xml">
-      <configuration name="Unittests for test_LOF.TestLOF.test_euclidean_distance" configurationId="tests" />
+    <history-entry file="Unittests_for_test_LOF_TestLOF_test_get_unique_pairs - 2018.11.18 at 23h 36m 44s.xml">
+      <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_LOF_TestLOF_test_euclidean_distance - 2018.11.13 at 23h 36m 30s.xml">
-      <configuration name="Unittests for test_LOF.TestLOF.test_euclidean_distance" configurationId="tests" />
+    <history-entry file="Unittests_for_test_LOF_TestLOF_test_get_unique_pairs - 2018.11.18 at 23h 36m 59s.xml">
+      <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_LOF_TestLOF_test_euclidean_distance - 2018.11.13 at 23h 37m 45s.xml">
-      <configuration name="Unittests for test_LOF.TestLOF.test_euclidean_distance" configurationId="tests" />
+    <history-entry file="Unittests_for_test_LOF_TestLOF_test_get_unique_pairs - 2018.11.18 at 23h 41m 19s.xml">
+      <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_LOF_TestLOF_test_get_unique_pairs - 2018.11.18 at 23h 41m 51s.xml">
+      <configuration name="Unittests for test_LOF.TestLOF.test_get_unique_pairs" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -350,7 +355,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4970545" visible="true" weight="0.3746988" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4970545" visible="true" weight="0.2807229" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4992636" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -413,31 +418,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lof.py">
+    <entry file="file://$PROJECT_DIR$/test_LOF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="166" column="17" lean-forward="true" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+        <state relative-caret-position="655">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <marker date="1542087971826" expanded="true" signature="754:755" ph="..." />
-            <marker date="1542087971826" expanded="true" signature="1455:1461" ph="..." />
-            <marker date="1542087971826" expanded="true" signature="1910:1917" ph="..." />
-            <marker date="1542087971826" expanded="true" signature="2514:3580" ph="..." />
-            <marker date="1542087971826" expanded="true" signature="4226:4232" ph="..." />
-            <marker date="1542087971826" expanded="true" signature="4919:4925" ph="..." />
-            <marker date="1542087971826" expanded="true" signature="5144:5150" ph="..." />
-            <marker date="1542087971826" expanded="true" signature="5145:5150" ph="..." />
-            <marker date="1542087971826" expanded="true" signature="5199:6257" ph="..." />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_LOF.py">
+    <entry file="file://$PROJECT_DIR$/env/lib/python3.7/random.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="39" column="96" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
+        <state relative-caret-position="190">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/math.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lof.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="102" column="114" selection-start-line="102" selection-start-column="114" selection-end-line="102" selection-end-column="114" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
+            <marker date="1542605162226" expanded="true" signature="783:784" ph="..." />
+            <marker date="1542605162226" expanded="true" signature="1484:1490" ph="..." />
+            <marker date="1542605162226" expanded="true" signature="1939:1945" ph="..." />
+            <marker date="1542605162226" expanded="true" signature="2591:2597" ph="..." />
+            <marker date="1542605162226" expanded="true" signature="3284:3290" ph="..." />
+            <marker date="1542605162226" expanded="true" signature="3509:3515" ph="..." />
+            <marker date="1542605162226" expanded="true" signature="3510:3515" ph="..." />
+            <marker date="1542605162226" expanded="true" signature="3564:4930" ph="..." />
           </folding>
         </state>
       </provider>

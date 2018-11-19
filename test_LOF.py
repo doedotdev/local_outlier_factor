@@ -40,4 +40,23 @@ class TestLOF(TestCase):
         assert(lof.get_euclidean_distance(self.coords['a'], self.coords['d']) == 3)
         assert(lof.get_euclidean_distance(self.coords['a'], self.coords['a']) == 0)
 
+    def test_get_unique_pairs(self):
+        test_lof = lof.LOF(self.coords, lof.LOF.CONST_MANHATTAN, 2)
+        test_lof.get_unique_pairs()
+        pairs = []
+        for pair in test_lof.get_unique_pairs():
+            pairs.append(pair)
+            print(pair)
+
+        assert(len(pairs) == 6)
+        assert(pairs[0] == ('a', 'b'))
+        assert(pairs[1] == ('a', 'c'))
+        assert(pairs[2] == ('a', 'd'))
+        assert(pairs[3] == ('b', 'c'))
+        assert(pairs[4] == ('b', 'd'))
+        assert(pairs[5] == ('c', 'd'))
+
+
+
+
 
