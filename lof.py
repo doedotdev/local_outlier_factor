@@ -1,8 +1,9 @@
 from itertools import combinations
-import math
+from math import sqrt, inf
 from json import dumps
 from collections import OrderedDict
 from itertools import islice
+import csv
 
 
 def get_manhattan_distance(point_a, point_b):
@@ -10,11 +11,10 @@ def get_manhattan_distance(point_a, point_b):
 
 
 def get_euclidean_distance(point_a, point_b):
-    return math.sqrt((point_a['x'] - point_b['x']) ** 2 + abs(point_a['y'] - point_b['y']) ** 2)
+    return sqrt((point_a['x'] - point_b['x']) ** 2 + abs(point_a['y'] - point_b['y']) ** 2)
 
 
 class LOF:
-
     # Distance Formulas
     CONST_MANHATTAN = 'Manhattan'
     CONST_EUCLIDEAN = 'Euclidean'
@@ -30,15 +30,51 @@ class LOF:
 
     def __init__(self, coordinates, distance_formula, k):
 
+        if isinstance(coordinates, OrderedDict):
+            self.coordinates = coordinates
+        elif isinstance(coordinates, str):
+            # do normal
+            self.coordinates = OrderedDict([])
+            with open(coordinates, newline='') as csv_file:
+                reader = csv.reader(csv_file, delimiter=',', quotechar='|')
+                for i, coord in enumerate(reader):
+                    key = str('coord_' + str(i) + '_x_' + coord[0] + '_y_' + coord[1])
+                    self.coordinates[key] = OrderedDict([
+                        ('x', int(coord[0])),
+                        ('y', int(coord[1]))
+                    ])
+
+        elif isinstance(coordinates, list) and isinstance(coordinates[0], tuple):
+            self.coordinates = OrderedDict([])
+            for i, coord in enumerate(coordinates):
+                key = str('coord_' + str(i) + '_x_' + str(coord[0]) + '_y_' + str(coord[1]))
+                self.coordinates[key] = OrderedDict([
+                    ('x', int(coord[0])),
+                    ('y', int(coord[1]))
+                ])
+
+        elif isinstance(coordinates, list) and isinstance(coordinates[0], list) and len(coordinates) == 2 and len(
+                coordinates[0]) == len(coordinates[1]):
+            self.coordinates = OrderedDict([])
+            for i, coord in enumerate(coordinates[0]):
+                key = str('coord_' + str(i) + '_x_' + str(coord) + '_y_' + str(coordinates[1][i]))
+                self.coordinates[key] = OrderedDict([
+                    ('x', int(coord)),
+                    ('y', int(coordinates[1][i]))
+                ])
+
+        else:
+            print(self.CONST_ERROR + 'Invalid coordinates data type')
+            exit()
+
         # set up
-        self.initial_check_data(coordinates, k)
+        self.initial_check_data(k)
         self.k = k
-        self.coordinates = coordinates
         self.distance_formula = self.initial_check_distance_formula(distance_formula)
 
         # run it
         self.write_initial_distance_calculations()
-        self.calculate_final_lof()
+        self.calculate_lof()
 
     def write_initial_distance_calculations(self):
         for combo in combinations(self.coordinates, 2):
@@ -46,8 +82,8 @@ class LOF:
             self.write_distance(combo[0], combo[1], distance)
             self.write_distance(combo[1], combo[0], distance)
 
-    def initial_check_data(self, coordinates, k):
-        if k >= len(coordinates):
+    def initial_check_data(self, k):
+        if k >= len(self.coordinates):
             print(self.CONST_ERROR + 'K value is greater than or equal to number of given coordinates')
             exit()
         else:
@@ -59,7 +95,7 @@ class LOF:
         else:
             return self.CONST_MANHATTAN
 
-    def calculate_final_lof(self):
+    def calculate_lof(self):
         for coordinate in self.coordinates:
             neighbors = self.coordinates[coordinate][self.DIST_KEY]
             k_nearest_set_count = len(self.coordinates[coordinate][self.DIST_KEY])
@@ -99,8 +135,10 @@ class LOF:
                     return
                 else:
                     self.coordinates[key_1][self.DIST_KEY][key_2] = distance
-                    temp_ordered_dict_sorted = OrderedDict(sorted(self.coordinates[key_1][self.DIST_KEY].items(), key=lambda x: x[1]))
-                    self.coordinates[key_1][self.DIST_KEY] = OrderedDict(islice(temp_ordered_dict_sorted.items(), self.k))
+                    temp_ordered_dict_sorted = OrderedDict(
+                        sorted(self.coordinates[key_1][self.DIST_KEY].items(), key=lambda x: x[1]))
+                    self.coordinates[key_1][self.DIST_KEY] = OrderedDict(
+                        islice(temp_ordered_dict_sorted.items(), self.k))
                     return
             else:
                 if key_2 in self.coordinates[key_1][self.DIST_KEY]:
@@ -145,26 +183,7 @@ class LOF:
     def print_lof_sorted_filtered(self, reverse_order=False, filter_value_greater_than=None,
                                   filter_value_less_than=None):
         print('===Local Outlier Factor Distances Sorted and Filtered===')
-
-        if (filter_value_less_than is not None and filter_value_greater_than is not None) and \
-                filter_value_greater_than > filter_value_less_than:
-            print(self.CONST_ERROR + 'Cannot filter for values greater than ' + filter_value_greater_than +
-                  ' and less than ' + filter_value_less_than)
-
-        if filter_value_less_than is None:
-            filter_value_less_than = math.inf
-
-        if filter_value_greater_than is None:
-            filter_value_greater_than = -math.inf
-
-        local_reachability_distances = []
-        for coordinate in self.coordinates:
-            coordinate_value = self.coordinates[coordinate][self.LOF_KEY]
-            if filter_value_greater_than < coordinate_value < filter_value_less_than:
-                local_reachability_distances.append((coordinate, coordinate_value))
-
-        local_reachability_distances.sort(key=lambda tup: tup[1], reverse=reverse_order)
-        for coordinate in local_reachability_distances:
+        for coordinate in self.get_lof_sorted_filtered(reverse_order, filter_value_greater_than, filter_value_less_than):
             print(coordinate[0] + ': ' + str(coordinate[1]))
 
     def get_lof_sorted_filtered(self, reverse_order=False, filter_value_greater_than=None,
@@ -176,10 +195,10 @@ class LOF:
             return []
 
         if filter_value_less_than is None:
-            filter_value_less_than = math.inf
+            filter_value_less_than = inf
 
         if filter_value_greater_than is None:
-            filter_value_greater_than = -math.inf
+            filter_value_greater_than = -inf
 
         local_outlier_factors = []
         for coordinate in self.coordinates:
@@ -194,29 +213,3 @@ class LOF:
             lofs.append((coordinate[0], coordinate[1]))
 
         return lofs
-
-
-coords = OrderedDict([
-    ('a', OrderedDict([
-        ('x', 0),
-        ('y', 0)
-    ])),
-    ('b', OrderedDict([
-        ('x', 0),
-        ('y', 1)
-    ])),
-    ('c', OrderedDict([
-        ('x', 1),
-        ('y', 1)
-    ])),
-    ('d', OrderedDict([
-        ('x', 3),
-        ('y', 0)
-    ]))
-])
-
-lof = LOF(coords, LOF.CONST_MANHATTAN, 1)
-# lof.print_all_data()
-# # lof.print_all_data(10)
-lof.print_all_lof()
-# # lof.print_lof_sorted_filtered(True)
