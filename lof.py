@@ -98,13 +98,9 @@ class LOF:
                 if distance > list(self.coordinates[key_1][self.DIST_KEY].values())[0]:
                     return
                 else:
-                    print(self.coordinates[key_1][self.DIST_KEY])
                     self.coordinates[key_1][self.DIST_KEY][key_2] = distance
-                    print(self.coordinates[key_1][self.DIST_KEY])
                     temp_ordered_dict_sorted = OrderedDict(sorted(self.coordinates[key_1][self.DIST_KEY].items(), key=lambda x: x[1]))
-                    print(self.coordinates[key_1][self.DIST_KEY])
                     self.coordinates[key_1][self.DIST_KEY] = OrderedDict(islice(temp_ordered_dict_sorted.items(), self.k))
-                    print(self.coordinates[key_1][self.DIST_KEY])
                     return
             else:
                 if key_2 in self.coordinates[key_1][self.DIST_KEY]:
@@ -219,8 +215,8 @@ coords = OrderedDict([
     ]))
 ])
 
-# lof = LOF(coords, LOF.CONST_MANHATTAN, 2)
+lof = LOF(coords, LOF.CONST_MANHATTAN, 1)
 # lof.print_all_data()
 # # lof.print_all_data(10)
-# lof.print_all_lof()
+lof.print_all_lof()
 # # lof.print_lof_sorted_filtered(True)
