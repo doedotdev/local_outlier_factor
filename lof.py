@@ -74,7 +74,10 @@ class LOF:
             self.coordinates[coordinate][self.LOF_KEY] = (reach_distances_sum * l_r_d_sum) / k_nearest_set_count ** 2
 
     def get_reach_distance(self, coordinate_one, coordinate_two):
-        return max(self.get_k_nearest_value(coordinate_one),
+        k_nearest_neighbor = list(self.coordinates[coordinate_one][self.DIST_KEY].keys())[self.k - 1]
+        k_nearest_neighbor_value = self.coordinates[coordinate_one][self.DIST_KEY][k_nearest_neighbor]
+
+        return max(k_nearest_neighbor_value,
                    self.get_distance(self.coordinates[coordinate_one], self.coordinates[coordinate_two]))
 
     def get_local_reachability_distance(self, coordinate):
@@ -88,10 +91,6 @@ class LOF:
         self.coordinates[coordinate][self.LRD_KEY] = l_r_d
 
         return l_r_d
-
-    def get_k_nearest_value(self, coordinate):
-        k_nearest_neighbor = list(self.coordinates[coordinate][self.DIST_KEY].keys())[self.k - 1]
-        return self.coordinates[coordinate][self.DIST_KEY][k_nearest_neighbor]
 
     def write_distance(self, key_1, key_2, distance):
         if self.DIST_KEY in self.coordinates[key_1]:
@@ -133,10 +132,19 @@ class LOF:
         print('===All Data For Each Coordinate===')
         print(dumps(self.coordinates, indent=tab))
 
+    def get_all_data(self):
+        return self.coordinates
+
     def print_all_lof(self):
         print('===All Local Outlier Factors for Each Coordinate===')
         for coordinate in self.coordinates:
             print(coordinate + ': ' + str(self.coordinates[coordinate][self.LOF_KEY]))
+
+    def get_all_lof(self):
+        lofs = []
+        for coordinate in self.coordinates:
+            lofs.append((coordinate, self.coordinates[coordinate][self.LOF_KEY]))
+        return lofs
 
     def print_lof_sorted_filtered(self, reverse_order=False, filter_value_greater_than=None,
                                   filter_value_less_than=None):
@@ -163,6 +171,34 @@ class LOF:
         for coordinate in local_reachability_distances:
             print(coordinate[0] + ': ' + str(coordinate[1]))
 
+    def get_lof_sorted_filtered(self, reverse_order=False, filter_value_greater_than=None,
+                                filter_value_less_than=None):
+        if (filter_value_less_than is not None and filter_value_greater_than is not None) and \
+                filter_value_greater_than > filter_value_less_than:
+            print(self.CONST_ERROR + 'Cannot filter for values greater than ' + filter_value_greater_than +
+                  ' and less than ' + filter_value_less_than)
+            return []
+
+        if filter_value_less_than is None:
+            filter_value_less_than = math.inf
+
+        if filter_value_greater_than is None:
+            filter_value_greater_than = -math.inf
+
+        local_outlier_factors = []
+        for coordinate in self.coordinates:
+            coordinate_value = self.coordinates[coordinate][self.LOF_KEY]
+            if filter_value_greater_than < coordinate_value < filter_value_less_than:
+                local_outlier_factors.append((coordinate, coordinate_value))
+
+        local_outlier_factors.sort(key=lambda tup: tup[1], reverse=reverse_order)
+
+        lofs = []
+        for coordinate in local_outlier_factors:
+            lofs.append((coordinate[0], coordinate[1]))
+
+        return lofs
+
 
 coords = OrderedDict([
     ('a', OrderedDict([
@@ -183,8 +219,8 @@ coords = OrderedDict([
     ]))
 ])
 
-lof = LOF(coords, LOF.CONST_MANHATTAN, 2)
-lof.print_all_data()
-# lof.print_all_data(10)
-lof.print_all_lof()
-# lof.print_lof_sorted_filtered(True)
+# lof = LOF(coords, LOF.CONST_MANHATTAN, 2)
+# lof.print_all_data()
+# # lof.print_all_data(10)
+# lof.print_all_lof()
+# # lof.print_lof_sorted_filtered(True)
