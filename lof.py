@@ -30,44 +30,8 @@ class LOF:
 
     def __init__(self, coordinates, distance_formula, k):
 
-        if isinstance(coordinates, OrderedDict):
-            self.coordinates = coordinates
-        elif isinstance(coordinates, str):
-            # do normal
-            self.coordinates = OrderedDict([])
-            with open(coordinates, newline='') as csv_file:
-                reader = csv.reader(csv_file, delimiter=',', quotechar='|')
-                for i, coord in enumerate(reader):
-                    key = str('coord_' + str(i) + '_x_' + coord[0] + '_y_' + coord[1])
-                    self.coordinates[key] = OrderedDict([
-                        ('x', int(coord[0])),
-                        ('y', int(coord[1]))
-                    ])
-
-        elif isinstance(coordinates, list) and isinstance(coordinates[0], tuple):
-            self.coordinates = OrderedDict([])
-            for i, coord in enumerate(coordinates):
-                key = str('coord_' + str(i) + '_x_' + str(coord[0]) + '_y_' + str(coord[1]))
-                self.coordinates[key] = OrderedDict([
-                    ('x', int(coord[0])),
-                    ('y', int(coord[1]))
-                ])
-
-        elif isinstance(coordinates, list) and isinstance(coordinates[0], list) and len(coordinates) == 2 and len(
-                coordinates[0]) == len(coordinates[1]):
-            self.coordinates = OrderedDict([])
-            for i, coord in enumerate(coordinates[0]):
-                key = str('coord_' + str(i) + '_x_' + str(coord) + '_y_' + str(coordinates[1][i]))
-                self.coordinates[key] = OrderedDict([
-                    ('x', int(coord)),
-                    ('y', int(coordinates[1][i]))
-                ])
-
-        else:
-            print(self.CONST_ERROR + 'Invalid coordinates data type')
-            exit()
-
         # set up
+        self.coordinates = self.get_coordinates_by_format(coordinates)
         self.initial_check_data(k)
         self.k = k
         self.distance_formula = self.initial_check_distance_formula(distance_formula)
@@ -75,6 +39,48 @@ class LOF:
         # run it
         self.write_initial_distance_calculations()
         self.calculate_lof()
+
+    def get_coordinates_by_format(self, coordinates):
+        if isinstance(coordinates, OrderedDict):
+            return coordinates
+        elif isinstance(coordinates, str):
+            # do normal
+            coordinates_to_return = OrderedDict([])
+            with open(coordinates, newline='') as csv_file:
+                reader = csv.reader(csv_file, delimiter=',', quotechar='|')
+                for i, coord in enumerate(reader):
+                    key = str('coord_' + str(i) + '_x_' + coord[0] + '_y_' + coord[1])
+                    coordinates_to_return[key] = OrderedDict([
+                        ('x', int(coord[0])),
+                        ('y', int(coord[1]))
+                    ])
+            return coordinates_to_return
+
+        elif isinstance(coordinates, list) and isinstance(coordinates[0], tuple):
+            coordinates_to_return = OrderedDict([])
+            for i, coord in enumerate(coordinates):
+                key = str('coord_' + str(i) + '_x_' + str(coord[0]) + '_y_' + str(coord[1]))
+                coordinates_to_return[key] = OrderedDict([
+                    ('x', int(coord[0])),
+                    ('y', int(coord[1]))
+                ])
+            return coordinates_to_return
+
+        elif isinstance(coordinates, list) and isinstance(coordinates[0], list) and len(coordinates) == 2 and len(
+                coordinates[0]) == len(coordinates[1]):
+            coordinates_to_return = OrderedDict([])
+            for i, coord in enumerate(coordinates[0]):
+                key = str('coord_' + str(i) + '_x_' + str(coord) + '_y_' + str(coordinates[1][i]))
+                coordinates_to_return[key] = OrderedDict([
+                    ('x', int(coord)),
+                    ('y', int(coordinates[1][i]))
+                ])
+            return coordinates_to_return
+
+        else:
+            print(self.CONST_ERROR + 'Invalid coordinates data type')
+            exit()
+
 
     def write_initial_distance_calculations(self):
         for combo in combinations(self.coordinates, 2):
