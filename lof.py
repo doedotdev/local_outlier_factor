@@ -3,7 +3,7 @@ from math import sqrt, inf
 from json import dumps
 from collections import OrderedDict
 from itertools import islice
-import csv
+from csv import reader
 
 
 def get_manhattan_distance(point_a, point_b):
@@ -47,8 +47,8 @@ class LOF:
             # do normal
             coordinates_to_return = OrderedDict([])
             with open(coordinates, newline='') as csv_file:
-                reader = csv.reader(csv_file, delimiter=',', quotechar='|')
-                for i, coord in enumerate(reader):
+                file = reader(csv_file, delimiter=',', quotechar='|')
+                for i, coord in enumerate(file):
                     key = str('coord_' + str(i) + '_x_' + coord[0] + '_y_' + coord[1])
                     coordinates_to_return[key] = OrderedDict([
                         ('x', int(coord[0])),
