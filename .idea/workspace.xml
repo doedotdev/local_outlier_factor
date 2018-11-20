@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7a1ed28-57ae-44e5-b9c0-3386e9d07e8a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lof.py" beforeDir="false" afterPath="$PROJECT_DIR$/lof.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_lof.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_lof.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +56,7 @@
           <entry key="md" value="18" />
           <entry key="ok" value="61" />
           <entry key="okay" value="13" />
-          <entry key="py" value="13222" />
+          <entry key="py" value="13384" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -63,7 +65,7 @@
           <entry key="Bash" value="232" />
           <entry key="Markdown" value="18" />
           <entry key="PLAIN_TEXT" value="79" />
-          <entry key="Python" value="13222" />
+          <entry key="Python" value="13384" />
         </counts>
       </usages-collector>
     </session>
@@ -85,19 +87,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lof.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            <state relative-caret-position="1230">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
-                <marker date="1542670288424" expanded="true" signature="815:816" ph="..." />
-                <marker date="1542670288424" expanded="true" signature="3118:3125" ph="..." />
-                <marker date="1542670288424" expanded="true" signature="3448:3454" ph="..." />
-                <marker date="1542670288424" expanded="true" signature="3895:3901" ph="..." />
-                <marker date="1542670288424" expanded="true" signature="4541:4547" ph="..." />
-                <marker date="1542670288424" expanded="true" signature="5424:5430" ph="..." />
-                <marker date="1542670288424" expanded="true" signature="5425:5430" ph="..." />
-                <marker date="1542670288424" expanded="true" signature="5479:6895" ph="..." />
-                <marker date="1542670288424" expanded="true" signature="7426:7464" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="815:816" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="3110:3116" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="3439:3445" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="3886:3892" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="4532:4538" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="5415:5421" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="5416:5421" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="5470:6886" ph="..." />
+                <marker date="1542672832447" expanded="true" signature="7417:7455" ph="..." />
               </folding>
             </state>
           </provider>
@@ -111,10 +113,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_lof.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <marker date="1542672808607" expanded="true" signature="2472:2580" ph="..." />
               </folding>
             </state>
           </provider>
@@ -123,8 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+            <state>
+              <caret selection-end-line="3" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -159,6 +161,7 @@
       <find>print</find>
       <find>math</find>
       <find>inf</find>
+      <find>test_print_lof_sorted_filtered</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -228,7 +231,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_lof.py">
+  <component name="RunManager" selected="Python.lof">
     <configuration name="lof" type="PythonConfigurationType" factoryName="Python">
       <module name="local_outlier_factor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -250,7 +253,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_lof.TestLOF" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="local_outlier_factor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -260,11 +263,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_lof.TestLOF&quot;" />
+      <option name="_new_target" value="&quot;test_lof.TestLOF.test_get_lof_sorted_filtered_ascending&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_as_ordered_dict" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending_filtered" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="local_outlier_factor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -274,11 +277,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_lof.TestLOF.test_init_with_coords_input_as_ordered_dict&quot;" />
+      <option name="_new_target" value="&quot;test_lof.TestLOF.test_get_lof_sorted_filtered_ascending_filtered&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_as_x_and_y_array" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="local_outlier_factor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -288,11 +291,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_lof.TestLOF.test_init_with_coords_input_as_x_and_y_array&quot;" />
+      <option name="_new_target" value="&quot;test_lof.TestLOF.test_get_lof_sorted_filtered_descending&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_from_csv_file_name" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending_filtered_range" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="local_outlier_factor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -302,11 +305,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_lof.TestLOF.test_init_with_coords_input_from_csv_file_name&quot;" />
+      <option name="_new_target" value="&quot;test_lof.TestLOF.test_get_lof_sorted_filtered_descending_filtered_range&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in test_lof.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_lof.TestLOF.test_print_all_data" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="local_outlier_factor" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -316,25 +319,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_lof.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_lof.TestLOF.test_print_all_data&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.lof" />
-      <item itemvalue="Python tests.Unittests for test_lof.TestLOF" />
-      <item itemvalue="Python tests.Unittests in test_lof.py" />
-      <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_init_with_coords_input_as_ordered_dict" />
-      <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_init_with_coords_input_as_x_and_y_array" />
-      <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_init_with_coords_input_from_csv_file_name" />
+      <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending" />
+      <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending" />
+      <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending_filtered" />
+      <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending_filtered_range" />
+      <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_print_all_data" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests in test_lof.py" />
-        <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_init_with_coords_input_from_csv_file_name" />
-        <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_init_with_coords_input_as_x_and_y_array" />
-        <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_init_with_coords_input_as_ordered_dict" />
-        <item itemvalue="Python tests.Unittests for test_lof.TestLOF" />
+        <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_print_all_data" />
+        <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending_filtered_range" />
+        <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending_filtered" />
+        <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending" />
+        <item itemvalue="Python tests.Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending" />
       </list>
     </recent_temporary>
   </component>
@@ -352,35 +355,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_lof_py - 2018.11.19 at 18h 17m 13s.xml">
+    <history-entry file="Unittests_in_test_lof_py - 2018.11.19 at 18h 40m 58s.xml">
       <configuration name="Unittests in test_lof.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_lof_TestLOF_test_init_with_coords_input_as_ordered_dict - 2018.11.19 at 18h 20m 08s.xml">
-      <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_as_ordered_dict" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_lof_TestLOF_test_init_with_coords_input_as_ordered_dict - 2018.11.19 at 18h 20m 24s.xml">
-      <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_as_ordered_dict" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_lof_TestLOF_test_init_with_coords_input_as_ordered_dict - 2018.11.19 at 18h 21m 55s.xml">
-      <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_as_ordered_dict" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_lof_TestLOF_test_init_with_coords_input_as_x_and_y_array - 2018.11.19 at 18h 21m 57s.xml">
-      <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_as_x_and_y_array" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_lof_TestLOF_test_init_with_coords_input_as_x_and_y_array - 2018.11.19 at 18h 22m 28s.xml">
-      <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_as_x_and_y_array" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_lof_TestLOF_test_init_with_coords_input_from_csv_file_name - 2018.11.19 at 18h 24m 24s.xml">
-      <configuration name="Unittests for test_lof.TestLOF.test_init_with_coords_input_from_csv_file_name" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_lof_py - 2018.11.19 at 18h 24m 49s.xml">
+    <history-entry file="Unittests_in_test_lof_py - 2018.11.19 at 18h 42m 47s.xml">
       <configuration name="Unittests in test_lof.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_lof_py - 2018.11.19 at 18h 28m 59s.xml">
-      <configuration name="Unittests in test_lof.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_lof_TestLOF_test_get_lof_sorted_filtered_ascending - 2018.11.19 at 18h 51m 24s.xml">
+      <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_lof_py - 2018.11.19 at 18h 29m 59s.xml">
-      <configuration name="Unittests in test_lof.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_lof_TestLOF_test_get_lof_sorted_filtered_ascending - 2018.11.19 at 18h 52m 37s.xml">
+      <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_lof_TestLOF_test_get_lof_sorted_filtered_descending - 2018.11.19 at 18h 53m 38s.xml">
+      <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_lof_TestLOF_test_get_lof_sorted_filtered_descending - 2018.11.19 at 18h 53m 44s.xml">
+      <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_lof_TestLOF_test_get_lof_sorted_filtered_ascending_filtered - 2018.11.19 at 18h 54m 59s.xml">
+      <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_ascending_filtered" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_lof_TestLOF_test_get_lof_sorted_filtered_descending_filtered_range - 2018.11.19 at 18h 57m 23s.xml">
+      <configuration name="Unittests for test_lof.TestLOF.test_get_lof_sorted_filtered_descending_filtered_range" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_lof_TestLOF_test_print_all_data - 2018.11.19 at 18h 59m 23s.xml">
+      <configuration name="Unittests for test_lof.TestLOF.test_print_all_data" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_lof_TestLOF_test_print_all_data - 2018.11.19 at 19h 13m 28s.xml">
+      <configuration name="Unittests for test_lof.TestLOF.test_print_all_data" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -450,23 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_lof.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="174" lean-forward="true" selection-start-line="174" selection-end-line="174" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -477,21 +463,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_lof.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <marker date="1542672808607" expanded="true" signature="2472:2580" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lof.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="1230">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-            <marker date="1542670288424" expanded="true" signature="815:816" ph="..." />
-            <marker date="1542670288424" expanded="true" signature="3118:3125" ph="..." />
-            <marker date="1542670288424" expanded="true" signature="3448:3454" ph="..." />
-            <marker date="1542670288424" expanded="true" signature="3895:3901" ph="..." />
-            <marker date="1542670288424" expanded="true" signature="4541:4547" ph="..." />
-            <marker date="1542670288424" expanded="true" signature="5424:5430" ph="..." />
-            <marker date="1542670288424" expanded="true" signature="5425:5430" ph="..." />
-            <marker date="1542670288424" expanded="true" signature="5479:6895" ph="..." />
-            <marker date="1542670288424" expanded="true" signature="7426:7464" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="815:816" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="3110:3116" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="3439:3445" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="3886:3892" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="4532:4538" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="5415:5421" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="5416:5421" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="5470:6886" ph="..." />
+            <marker date="1542672832447" expanded="true" signature="7417:7455" ph="..." />
           </folding>
         </state>
       </provider>

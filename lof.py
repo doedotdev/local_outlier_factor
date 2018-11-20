@@ -81,7 +81,6 @@ class LOF:
             print(self.CONST_ERROR + 'Invalid coordinates data type')
             exit()
 
-
     def write_initial_distance_calculations(self):
         for combo in combinations(self.coordinates, 2):
             distance = self.get_distance(self.coordinates[combo[0]], self.coordinates[combo[1]])
