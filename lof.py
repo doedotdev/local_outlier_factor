@@ -91,6 +91,9 @@ class LOF:
         if k >= len(self.coordinates):
             print(self.CONST_ERROR + 'K value is greater than or equal to number of given coordinates')
             exit()
+        elif k == 0:
+            print(self.CONST_ERROR + 'K value is zero. Do not do that')
+            exit()
         else:
             pass
 
